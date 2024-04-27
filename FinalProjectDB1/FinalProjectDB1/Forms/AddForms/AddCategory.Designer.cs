@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dungeonTextBox1 = new ReaLTaiizor.DungeonTextBox();
+            this.cname = new ReaLTaiizor.DungeonTextBox();
             this.royalButton1 = new ReaLTaiizor.RoyalButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -62,23 +62,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Category Name";
             // 
-            // dungeonTextBox1
+            // cname
             // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(332, 18);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = false;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(323, 33);
-            this.dungeonTextBox1.TabIndex = 2;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            this.cname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cname.BackColor = System.Drawing.Color.Transparent;
+            this.cname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.cname.EdgeColor = System.Drawing.Color.White;
+            this.cname.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.cname.ForeColor = System.Drawing.Color.DimGray;
+            this.cname.Location = new System.Drawing.Point(332, 18);
+            this.cname.MaxLength = 32767;
+            this.cname.Multiline = false;
+            this.cname.Name = "cname";
+            this.cname.ReadOnly = false;
+            this.cname.Size = new System.Drawing.Size(323, 33);
+            this.cname.TabIndex = 2;
+            this.cname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cname.UseSystemPasswordChar = false;
             // 
             // royalButton1
             // 
@@ -100,6 +100,7 @@
             this.royalButton1.Size = new System.Drawing.Size(103, 47);
             this.royalButton1.TabIndex = 5;
             this.royalButton1.Text = "SAVE";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -109,7 +110,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cname, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.royalButton1, 1, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 115);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -121,12 +122,12 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -165,7 +166,7 @@
 
         private ReaLTaiizor.FoxBigLabel foxBigLabel1;
         private System.Windows.Forms.Label label1;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.DungeonTextBox cname;
         private ReaLTaiizor.RoyalButton royalButton1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dataGridView1;

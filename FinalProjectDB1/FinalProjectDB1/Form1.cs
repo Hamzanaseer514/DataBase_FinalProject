@@ -14,45 +14,49 @@ namespace FinalProjectDB1
 {
     public partial class Form1 : Form
     {
-        DashboardForm dashboard;
+        Forms.DashBoard.Dashboard dashboard;
         AddStudent Astudent;
         UpdateStudent UStudent;
         DeleteStudent DStudent;
 
 
-        AddAdmincs AAdmin;
-        UpdateAdmin UAdmin;
-        DeleteAdmin DAdmin;
+        Forms.AddForms.AddAdmin AAdmin;
+        Forms.UpdateForms.UpdateAdmin UAdmin;
+        Forms.DeleteForms.DeleteAdmin DAdmin;
 
 
-        AddStaff AStaff;
-        UpdateStaff UStaff;
-        DeleteStaff DStaff;
+        Forms.AddForms.AddStaff AStaff;
+        Forms.UpdateForms.UpdateStaff UStaff;
+        Forms.DeleteForms.DeleteStaff DStaff;
 
 
         Forms.AddForms.AddCategory ACat;
-        UpdateCategory UCat;
-        DeleteCategory DCat;
+        Forms.UpdateForms.UpdateCategory UCat;
+        Forms.DeleteForms.DeleteCategory DCat;
 
 
         Forms.AddForms.AddPublisher APub;
-        UpdatePublisher7 UPub;
-        DeletePublisher DPub;
+        Forms.UpdateForms.UpdatePublisher UPub;
+        Forms.DeleteForms.DeletePublisher DPub;
 
-        AddBook ABook;
-        UpdateBook UBook;
-        DeleteBook DBook;
+        Forms.AddForms.AddBook ABook;
+        Forms.UpdateForms.UpdateBook UBook;
+        Forms.DeleteForms.DeleteBook DBook;
 
 
-        AddAuthor AAuthor;
-        UpdateAuthor UAuthor;
-        DeleteAuthor DAuthor;
+        Forms.AddForms.AddAuthor AAuthor;
+        Forms.UpdateForms.UpdateAuthor UAuthor;
+        Forms.DeleteForms.DeleteAuthor DAuthor;
 
-        public Form1()
+        Forms.AddForms.AddLocation alocation;
+
+        int AdminUserid;
+        public Form1(int adminuserid)
         {
            
             InitializeComponent();
             MdiProp();
+            AdminUserid = adminuserid;
         }
 
         /* Use for Student Menue*/ bool meueExpand = false;
@@ -367,7 +371,7 @@ namespace FinalProjectDB1
         {
             if (dashboard == null)
             {
-                dashboard = new DashboardForm();
+                dashboard = new Forms.DashBoard.Dashboard();
                 dashboard.FormClosed += Dashboard_FormClosed;
                 dashboard.MdiParent = this;
                 dashboard.Dock = DockStyle.Fill;    
@@ -387,19 +391,20 @@ namespace FinalProjectDB1
 
         private void AddStd_Btn_Click(object sender, EventArgs e)
         {
-            if (Astudent == null)
-            {
-                Astudent = new AddStudent();
-                Astudent.FormClosed += AddStudent_FormClosed;
-                Astudent.MdiParent = this;
-                Astudent.Dock = DockStyle.Fill;
-                Astudent.Show();
-
-            }
-            else
-            {
-                Astudent.Activate();
-            }
+           
+           if (Astudent == null)
+           {
+               Astudent = new AddStudent();
+               Astudent.FormClosed += AddStudent_FormClosed;
+               Astudent.MdiParent = this;
+               Astudent.Dock = DockStyle.Fill;
+               Astudent.Show();
+           
+           }
+           else
+           {
+               Astudent.Activate();
+           }
         }
 
         private void AddStudent_FormClosed(object sender, FormClosedEventArgs e)
@@ -456,7 +461,7 @@ namespace FinalProjectDB1
         {
             if (AAdmin == null)
             {
-                AAdmin = new AddAdmincs();
+                AAdmin = new Forms.AddForms.AddAdmin();
                 AAdmin.FormClosed += AddAdmincs_FormClosed;
                 AAdmin.MdiParent = this;
                 AAdmin.Dock = DockStyle.Fill;
@@ -479,7 +484,7 @@ namespace FinalProjectDB1
         {
             if (UAdmin == null)
             {
-                UAdmin = new UpdateAdmin();
+                UAdmin = new Forms.UpdateForms.UpdateAdmin();
                 UAdmin.FormClosed += UpdateAdmin_FormClosed;
                 UAdmin.MdiParent = this;
                 UAdmin.Dock = DockStyle.Fill;
@@ -502,7 +507,7 @@ namespace FinalProjectDB1
         {
             if (DAdmin == null)
             {
-                DAdmin = new DeleteAdmin();
+                DAdmin = new Forms.DeleteForms.DeleteAdmin();
                 DAdmin.FormClosed += DeleteAdmin_FormClosed;
                 DAdmin.MdiParent = this;
                 DAdmin.Dock = DockStyle.Fill;
@@ -524,7 +529,7 @@ namespace FinalProjectDB1
         {
             if (AStaff == null)
             {
-                AStaff = new AddStaff();
+                AStaff = new Forms.AddForms.AddStaff();
                 AStaff.FormClosed += AddStaff_FormClosed;
                 AStaff.MdiParent = this;
                 AStaff.Dock = DockStyle.Fill;
@@ -547,7 +552,7 @@ namespace FinalProjectDB1
         {
             if (UStaff == null)
             {
-                UStaff = new UpdateStaff();
+                UStaff = new Forms.UpdateForms.UpdateStaff();
                 UStaff.FormClosed += UpdateStaff_FormClosed;
                 UStaff.MdiParent = this;
                 UStaff.Dock = DockStyle.Fill;
@@ -570,7 +575,7 @@ namespace FinalProjectDB1
         {
             if (DStaff == null)
             {
-                DStaff = new DeleteStaff();
+                DStaff = new Forms.DeleteForms.DeleteStaff();
                 DStaff.FormClosed += DeleteStaff_FormClosed;
                 DStaff.MdiParent = this;
                 DStaff.Dock = DockStyle.Fill;
@@ -594,7 +599,7 @@ namespace FinalProjectDB1
         {
             if (ACat == null)
             {
-                ACat = new Forms.AddForms.AddCategory();
+                ACat = new Forms.AddForms.AddCategory(AdminUserid);
                 ACat.FormClosed += AddCategory_FormClosed;
                 ACat.MdiParent = this;
                 ACat.Dock = DockStyle.Fill;
@@ -616,7 +621,7 @@ namespace FinalProjectDB1
         {
             if (UCat == null)
             {
-                UCat = new UpdateCategory();
+                UCat = new Forms.UpdateForms.UpdateCategory();
                 UCat.FormClosed += UpdateCategory_FormClosed;
                 UCat.MdiParent = this;
                 UCat.Dock = DockStyle.Fill;
@@ -638,7 +643,7 @@ namespace FinalProjectDB1
         {
             if (DCat == null)
             {
-                DCat = new DeleteCategory();
+                DCat = new Forms.DeleteForms.DeleteCategory();
                 DCat.FormClosed += DeleteCategory_FormClosed;
                 DCat.MdiParent = this;
                 DCat.Dock = DockStyle.Fill;
@@ -660,7 +665,7 @@ namespace FinalProjectDB1
         {
             if (APub == null)
             {
-                APub = new Forms.AddForms.AddPublisher();
+                APub = new Forms.AddForms.AddPublisher(AdminUserid);
                 APub.FormClosed += AddPublisher_FormClosed;
                 APub.MdiParent = this;
                 APub.Dock = DockStyle.Fill;
@@ -683,7 +688,7 @@ namespace FinalProjectDB1
         {
             if (UPub == null)
             {
-                UPub = new UpdatePublisher7();
+                UPub = new Forms.UpdateForms.UpdatePublisher();
                 UPub.FormClosed += UpdatePublisher_FormClosed;
                 UPub.MdiParent = this;
                 UPub.Dock = DockStyle.Fill;
@@ -706,7 +711,7 @@ namespace FinalProjectDB1
         {
             if (DPub == null)
             {
-                DPub = new DeletePublisher();
+                DPub = new Forms.DeleteForms.DeletePublisher();
                 DPub.FormClosed += DeletePublisher_FormClosed;
                 DPub.MdiParent = this;
                 DPub.Dock = DockStyle.Fill;
@@ -729,7 +734,7 @@ namespace FinalProjectDB1
         {
             if (ABook == null)
             {
-                ABook = new AddBook();
+                ABook = new Forms.AddForms.AddBook();
                 ABook.FormClosed += AddBook_FormClosed;
                 ABook.MdiParent = this;
                 ABook.Dock = DockStyle.Fill;
@@ -752,7 +757,7 @@ namespace FinalProjectDB1
         {
             if (UBook == null)
             {
-                UBook = new UpdateBook();
+                UBook = new Forms.UpdateForms.UpdateBook();
                 UBook.FormClosed += UpdateBook_FormClosed;
                 UBook.MdiParent = this;
                 UBook.Dock = DockStyle.Fill;
@@ -775,7 +780,7 @@ namespace FinalProjectDB1
         {
             if (DBook == null)
             {
-                DBook = new DeleteBook();
+                DBook = new Forms.DeleteForms.DeleteBook();
                 DBook.FormClosed += DeleteBook_FormClosed;
                 DBook.MdiParent = this;
                 DBook.Dock = DockStyle.Fill;
@@ -797,7 +802,7 @@ namespace FinalProjectDB1
         {
             if (AAuthor == null)
             {
-                AAuthor = new AddAuthor();
+                AAuthor = new Forms.AddForms.AddAuthor(AdminUserid);
                 AAuthor.FormClosed += AddAuthor_FormClosed;
                 AAuthor.MdiParent = this;
                 AAuthor.Dock = DockStyle.Fill;
@@ -820,7 +825,7 @@ namespace FinalProjectDB1
         {
             if (UAuthor == null)
             {
-                UAuthor = new UpdateAuthor();
+                UAuthor = new Forms.UpdateForms.UpdateAuthor();
                 UAuthor.FormClosed += UpdateAuthor_FormClosed;
                 UAuthor.MdiParent = this;
                 UAuthor.Dock = DockStyle.Fill;
@@ -842,7 +847,7 @@ namespace FinalProjectDB1
         {
             if (DAuthor == null)
             {
-                DAuthor = new DeleteAuthor();
+                DAuthor = new Forms.DeleteForms.DeleteAuthor();
                 DAuthor.FormClosed += DeleteAuthor_FormClosed;
                 DAuthor.MdiParent = this;
                 DAuthor.Dock = DockStyle.Fill;
@@ -866,6 +871,11 @@ namespace FinalProjectDB1
         {
             this.SetBevel(false);
             Controls.OfType<MdiClient>().FirstOrDefault().BackColor = Color.FromArgb(232, 234, 237);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 
