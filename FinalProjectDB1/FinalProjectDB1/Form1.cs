@@ -15,9 +15,9 @@ namespace FinalProjectDB1
     public partial class Form1 : Form
     {
         Forms.DashBoard.Dashboard dashboard;
-        AddStudent Astudent;
-        UpdateStudent UStudent;
-        DeleteStudent DStudent;
+        Forms.AddForms.AddStudent Astudent;
+        Forms.UpdateForms.UpdateStudent UStudent;
+        Forms.DeleteForms.DeleteStudent DStudent;
 
 
         Forms.AddForms.AddAdmin AAdmin;
@@ -31,7 +31,6 @@ namespace FinalProjectDB1
 
 
         Forms.AddForms.AddCategory ACat;
-        Forms.UpdateForms.UpdateCategory UCat;
         Forms.DeleteForms.DeleteCategory DCat;
 
 
@@ -49,6 +48,7 @@ namespace FinalProjectDB1
         Forms.DeleteForms.DeleteAuthor DAuthor;
 
         Forms.AddForms.AddLocation alocation;
+        Forms.DeleteForms.DeleteLocation dlocation;
 
         int AdminUserid;
         public Form1(int adminuserid)
@@ -66,6 +66,8 @@ namespace FinalProjectDB1
         /* Use for Publisher Menue*/ bool meueExpand4 = false;
         /* Use for Category Menue*/bool meueExpand5 = false;
         /* Use for  Author Menue*/ bool meueExpand6 = false;
+        /* Use for  location Menue*/ bool meueExpand7 = false;
+
         /* Use for Side Bar*/ bool sidebarexpand = false;
 
         //These are used in form movemenet Events
@@ -236,7 +238,7 @@ namespace FinalProjectDB1
             if (meueExpand5 == false)
             {
                 Categorymenu.Height += 10;
-                if (Categorymenu.Height >= 215)
+                if (Categorymenu.Height >= 159)
                 {
                     Categorytimer.Stop();
                     meueExpand5 = true;
@@ -391,20 +393,21 @@ namespace FinalProjectDB1
 
         private void AddStd_Btn_Click(object sender, EventArgs e)
         {
+
+             if (Astudent == null)
+             {
+                 Astudent = new Forms.AddForms.AddStudent();
+                 Astudent.FormClosed += AddStudent_FormClosed;
+                 Astudent.MdiParent = this;
+                 Astudent.Dock = DockStyle.Fill;
+                 Astudent.Show();
+             
+             }
+             else
+             {
+                 Astudent.Activate();
+             }
            
-           if (Astudent == null)
-           {
-               Astudent = new AddStudent();
-               Astudent.FormClosed += AddStudent_FormClosed;
-               Astudent.MdiParent = this;
-               Astudent.Dock = DockStyle.Fill;
-               Astudent.Show();
-           
-           }
-           else
-           {
-               Astudent.Activate();
-           }
         }
 
         private void AddStudent_FormClosed(object sender, FormClosedEventArgs e)
@@ -416,7 +419,7 @@ namespace FinalProjectDB1
         {
             if (UStudent == null)
             {
-                UStudent = new UpdateStudent();
+                UStudent = new Forms.UpdateForms.UpdateStudent();
                 UStudent.FormClosed += UpdateStudent_FormClosed;
                 UStudent.MdiParent = this;
                 UStudent.Dock = DockStyle.Fill;
@@ -439,7 +442,7 @@ namespace FinalProjectDB1
         {
             if (DStudent == null)
             {
-                DStudent = new DeleteStudent();
+                DStudent = new Forms.DeleteForms.DeleteStudent();
                 DStudent.FormClosed += DeleteStudent_FormClosed;
                 DStudent.MdiParent = this;
                 DStudent.Dock = DockStyle.Fill;
@@ -617,27 +620,8 @@ namespace FinalProjectDB1
             ACat.Activate();
         }
 
-        private void UpdateCategory_Btn_Click(object sender, EventArgs e)
-        {
-            if (UCat == null)
-            {
-                UCat = new Forms.UpdateForms.UpdateCategory();
-                UCat.FormClosed += UpdateCategory_FormClosed;
-                UCat.MdiParent = this;
-                UCat.Dock = DockStyle.Fill;
-                UCat.Show();
 
-            }
-            else
-            {
-                UCat.Activate();
-            }
-        }
-
-        private void UpdateCategory_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            UCat.Activate();
-        }
+       
 
         private void DeleteCategory_Btn_Click(object sender, EventArgs e)
         {
@@ -734,7 +718,7 @@ namespace FinalProjectDB1
         {
             if (ABook == null)
             {
-                ABook = new Forms.AddForms.AddBook();
+                ABook = new Forms.AddForms.AddBook(AdminUserid);
                 ABook.FormClosed += AddBook_FormClosed;
                 ABook.MdiParent = this;
                 ABook.Dock = DockStyle.Fill;
@@ -876,6 +860,78 @@ namespace FinalProjectDB1
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void addlocation_Click(object sender, EventArgs e)
+        {
+            if (alocation == null)
+            {
+                alocation = new Forms.AddForms.AddLocation(AdminUserid);
+                alocation.FormClosed += addlocation_FormClosed;
+                alocation.MdiParent = this;
+                alocation.Dock = DockStyle.Fill;
+                alocation.Show();
+
+            }
+            else
+            {
+                alocation.Activate();
+            }
+        }
+
+        private void addlocation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            alocation.Activate();
+        }
+
+        private void LocationTimer_Tick(object sender, EventArgs e)
+        {
+            if (meueExpand7 == false)
+            {
+                locationmenu.Height += 10;
+                if (locationmenu.Height >= 159)
+                {
+                    LocationTimer.Stop();
+                    meueExpand7 = true;
+                }
+
+            }
+            else
+            {
+                locationmenu.Height -= 10;
+                if (locationmenu.Height <= 52)
+                {
+                    LocationTimer.Stop();
+                    meueExpand7 = false;
+                }
+            }
+        }
+
+        private void manage_Click(object sender, EventArgs e)
+        {
+            LocationTimer.Start();
+        }
+
+        private void deletelocation_Click(object sender, EventArgs e)
+        {
+            if (dlocation == null)
+            {
+                dlocation = new Forms.DeleteForms.DeleteLocation();
+                dlocation.FormClosed += deletelocation_FormClosed;
+                dlocation.MdiParent = this;
+                dlocation.Dock = DockStyle.Fill;
+                dlocation.Show();
+
+            }
+            else
+            {
+                dlocation.Activate();
+            }
+        }
+
+        private void deletelocation_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dlocation.Activate();
         }
     }
 

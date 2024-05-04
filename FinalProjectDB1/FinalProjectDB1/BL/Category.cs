@@ -14,10 +14,10 @@ namespace FinalProjectDB1.BL
         private string CategoryName;
         private int UserID;
 
-        public Category(string categoryname,int userid)
+        public Category(string categoryname, int userid)
         {
             this.CategoryName = categoryname;
-            this.UserID = userid;   
+            this.UserID = userid;
         }
         public void addCategoryInDatabase()
         {
@@ -39,6 +39,27 @@ namespace FinalProjectDB1.BL
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+        public void removeCategoryInDatabase()
+        {
+            try
+            {
+
+                var con = Configuration.getInstance().getConnection();
+
+                string deleteQuery = "DELETE FROM Category WHERE CategoryID = @CategoryID";
+
+                SqlCommand cmd = new SqlCommand(deleteQuery, con);
+                cmd.Parameters.AddWithValue("@CategoryID", UserID);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Category deleted successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
         }
     }
 }

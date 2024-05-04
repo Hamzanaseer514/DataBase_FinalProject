@@ -7,7 +7,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Net.Sockets;
 
-namespace FinalProjectDB1
+ namespace FinalProjectDB1
 {
     public static class mdiProperties
     {

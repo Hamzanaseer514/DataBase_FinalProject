@@ -34,7 +34,7 @@ namespace FinalProjectDB1.Forms.LogInSignUp
             string city = ucity.Text;
             string regno = uregno.Text;
             string department = stdepartment.Text;
-            int semester = int.Parse(stsemester.Text);
+            int ssemester = int.Parse(stsemester.Text);
             long cnic;
             string usertype = "Student";
             DateTime date = DateTime.Now;
@@ -45,7 +45,7 @@ namespace FinalProjectDB1.Forms.LogInSignUp
             {
                 MessageBox.Show("Please fill in all the fields.");
             }
-            else if (!int.TryParse(stsemester.Text, out semester))
+            else if (!int.TryParse(stsemester.Text, out ssemester))
             {
                 MessageBox.Show("Invalid semester value. Please enter a valid integer value.");
             }
@@ -75,7 +75,7 @@ namespace FinalProjectDB1.Forms.LogInSignUp
             }
             else
             {
-                BL.Student student = new BL.Student(Fname,lname,email,password,contact,cnic,city,usertype, regno,department,semester,1,date);
+                BL.Student student = new BL.Student(Fname,lname,email,password,contact,cnic,city,usertype, regno,department,ssemester,1,date);
                 student.SignUp();
             }
         }

@@ -31,16 +31,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.ptype = new ReaLTaiizor.ComboBoxEdit();
             this.label3 = new System.Windows.Forms.Label();
             this.planguage = new ReaLTaiizor.DungeonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pname = new ReaLTaiizor.DungeonTextBox();
-            this.royalButton1 = new ReaLTaiizor.RoyalButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.pAdress = new System.Windows.Forms.RichTextBox();
+            this.royalButton1 = new ReaLTaiizor.RoyalButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ptype = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -80,32 +80,10 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1008, 190);
             this.tableLayoutPanel1.TabIndex = 12;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
-            // 
-            // ptype
-            // 
-            this.ptype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.ptype.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.ptype.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ptype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.ptype.DropDownHeight = 100;
-            this.ptype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ptype.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.ptype.ForeColor = System.Drawing.Color.Black;
-            this.ptype.FormattingEnabled = true;
-            this.ptype.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ptype.IntegralHeight = false;
-            this.ptype.ItemHeight = 20;
-            this.ptype.Items.AddRange(new object[] {
-            "E Book",
-            "Hard Book"});
-            this.ptype.Location = new System.Drawing.Point(255, 129);
-            this.ptype.Name = "ptype";
-            this.ptype.Size = new System.Drawing.Size(246, 26);
-            this.ptype.StartIndex = 0;
-            this.ptype.TabIndex = 17;
             // 
             // label3
             // 
@@ -176,6 +154,26 @@
             this.pname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
             this.pname.UseSystemPasswordChar = false;
             // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(522, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(216, 27);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Publisher Address";
+            // 
+            // pAdress
+            // 
+            this.pAdress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pAdress.Location = new System.Drawing.Point(759, 107);
+            this.pAdress.Name = "pAdress";
+            this.pAdress.Size = new System.Drawing.Size(246, 70);
+            this.pAdress.TabIndex = 19;
+            this.pAdress.Text = "";
+            // 
             // royalButton1
             // 
             this.royalButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -215,26 +213,18 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(954, 187);
             this.dataGridView1.TabIndex = 13;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // label4
+            // ptype
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(522, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(216, 27);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Publisher Address";
-            // 
-            // pAdress
-            // 
-            this.pAdress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pAdress.Location = new System.Drawing.Point(759, 107);
-            this.pAdress.Name = "pAdress";
-            this.pAdress.Size = new System.Drawing.Size(246, 70);
-            this.pAdress.TabIndex = 19;
-            this.pAdress.Text = "";
+            this.ptype.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ptype.Items.AddRange(new object[] {
+            "EBook",
+            "Hardbook"});
+            this.ptype.Location = new System.Drawing.Point(255, 130);
+            this.ptype.Name = "ptype";
+            this.ptype.Size = new System.Drawing.Size(246, 24);
+            this.ptype.TabIndex = 25;
             // 
             // AddPublisher
             // 
@@ -267,9 +257,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private ReaLTaiizor.DungeonTextBox planguage;
-        private ReaLTaiizor.ComboBoxEdit ptype;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox pAdress;
+        private System.Windows.Forms.ComboBox ptype;
     }
 }

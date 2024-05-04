@@ -16,7 +16,7 @@ namespace FinalProjectDB1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Forms.LogInSignUp.SignIn());
+            Application.Run(new Form1(4));
         }
     }
 }

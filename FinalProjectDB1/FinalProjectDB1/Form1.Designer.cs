@@ -97,13 +97,18 @@
             this.UpdatePublisher_Btn = new System.Windows.Forms.Button();
             this.panel25 = new System.Windows.Forms.Panel();
             this.DeletePublisher = new System.Windows.Forms.Button();
+            this.locationmenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.manage = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.addlocation = new System.Windows.Forms.Button();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.deletelocation = new System.Windows.Forms.Button();
             this.Categorymenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel30 = new System.Windows.Forms.Panel();
             this.Categorymenubtn = new System.Windows.Forms.Button();
             this.panel31 = new System.Windows.Forms.Panel();
             this.AddCategory_Btn = new System.Windows.Forms.Button();
-            this.panel32 = new System.Windows.Forms.Panel();
-            this.UpdateCategory_Btn = new System.Windows.Forms.Button();
             this.panel33 = new System.Windows.Forms.Panel();
             this.DeleteCategory_Btn = new System.Windows.Forms.Button();
             this.sidemenutimer = new System.Windows.Forms.Timer(this.components);
@@ -114,6 +119,7 @@
             this.panel34 = new ReaLTaiizor.Panel();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.skyLabel10 = new ReaLTaiizor.SkyLabel();
+            this.LocationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Sidemenu)).BeginInit();
             this.panel3.SuspendLayout();
@@ -149,10 +155,13 @@
             this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
             this.panel25.SuspendLayout();
+            this.locationmenu.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.Categorymenu.SuspendLayout();
             this.panel30.SuspendLayout();
             this.panel31.SuspendLayout();
-            this.panel32.SuspendLayout();
             this.panel33.SuspendLayout();
             this.panel34.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -189,7 +198,7 @@
             this.adminshowbtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.adminshowbtn.Name = "adminshowbtn";
             this.adminshowbtn.Padding = new System.Windows.Forms.Padding(3, 5, 0, 0);
-            this.adminshowbtn.Size = new System.Drawing.Size(138, 25);
+            this.adminshowbtn.Size = new System.Drawing.Size(112, 20);
             this.adminshowbtn.TabIndex = 12;
             this.adminshowbtn.Text = "        Admin Menu";
             // 
@@ -200,7 +209,7 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(54, 2);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 23);
+            this.label1.Size = new System.Drawing.Size(128, 17);
             this.label1.TabIndex = 1;
             this.label1.Text = "National Library   |";
             // 
@@ -384,7 +393,7 @@
             this.staffmenu.Controls.Add(this.panel13);
             this.staffmenu.Controls.Add(this.panel14);
             this.staffmenu.ForeColor = System.Drawing.Color.White;
-            this.staffmenu.Location = new System.Drawing.Point(0, 408);
+            this.staffmenu.Location = new System.Drawing.Point(0, 356);
             this.staffmenu.Margin = new System.Windows.Forms.Padding(0);
             this.staffmenu.Name = "staffmenu";
             this.staffmenu.Size = new System.Drawing.Size(239, 52);
@@ -616,12 +625,13 @@
             this.sidebar.Controls.Add(this.Bookmenu);
             this.sidebar.Controls.Add(this.Authormenu);
             this.sidebar.Controls.Add(this.Publishermenu);
-            this.sidebar.Controls.Add(this.Categorymenu);
             this.sidebar.Controls.Add(this.staffmenu);
+            this.sidebar.Controls.Add(this.locationmenu);
+            this.sidebar.Controls.Add(this.Categorymenu);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 25);
             this.sidebar.Name = "sidebar";
-            this.sidebar.Size = new System.Drawing.Size(46, 563);
+            this.sidebar.Size = new System.Drawing.Size(48, 584);
             this.sidebar.TabIndex = 11;
             // 
             // Inventory
@@ -642,7 +652,7 @@
             this.InventoryLabel.Location = new System.Drawing.Point(3, 0);
             this.InventoryLabel.Name = "InventoryLabel";
             this.InventoryLabel.Padding = new System.Windows.Forms.Padding(5, 10, 5, 5);
-            this.InventoryLabel.Size = new System.Drawing.Size(159, 42);
+            this.InventoryLabel.Size = new System.Drawing.Size(131, 37);
             this.InventoryLabel.TabIndex = 12;
             this.InventoryLabel.Text = "INVENTORY";
             // 
@@ -973,17 +983,100 @@
             this.DeletePublisher.UseVisualStyleBackColor = false;
             this.DeletePublisher.Click += new System.EventHandler(this.DeletePublisher_Click);
             // 
+            // locationmenu
+            // 
+            this.locationmenu.Controls.Add(this.panel5);
+            this.locationmenu.Controls.Add(this.panel7);
+            this.locationmenu.Controls.Add(this.panel9);
+            this.locationmenu.ForeColor = System.Drawing.Color.White;
+            this.locationmenu.Location = new System.Drawing.Point(0, 408);
+            this.locationmenu.Margin = new System.Windows.Forms.Padding(0);
+            this.locationmenu.Name = "locationmenu";
+            this.locationmenu.Size = new System.Drawing.Size(239, 52);
+            this.locationmenu.TabIndex = 15;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.manage);
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Margin = new System.Windows.Forms.Padding(0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(239, 53);
+            this.panel5.TabIndex = 5;
+            // 
+            // manage
+            // 
+            this.manage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(51)))), ((int)(((byte)(55)))));
+            this.manage.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.manage.Image = ((System.Drawing.Image)(resources.GetObject("manage.Image")));
+            this.manage.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.manage.Location = new System.Drawing.Point(-12, -14);
+            this.manage.Name = "manage";
+            this.manage.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.manage.Size = new System.Drawing.Size(266, 79);
+            this.manage.TabIndex = 4;
+            this.manage.Text = "Manage Location";
+            this.manage.UseVisualStyleBackColor = false;
+            this.manage.Click += new System.EventHandler(this.manage_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.addlocation);
+            this.panel7.Location = new System.Drawing.Point(0, 53);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(239, 53);
+            this.panel7.TabIndex = 7;
+            // 
+            // addlocation
+            // 
+            this.addlocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.addlocation.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addlocation.Image = ((System.Drawing.Image)(resources.GetObject("addlocation.Image")));
+            this.addlocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.addlocation.Location = new System.Drawing.Point(-12, -14);
+            this.addlocation.Name = "addlocation";
+            this.addlocation.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.addlocation.Size = new System.Drawing.Size(266, 79);
+            this.addlocation.TabIndex = 4;
+            this.addlocation.Text = "Add Location";
+            this.addlocation.UseVisualStyleBackColor = false;
+            this.addlocation.Click += new System.EventHandler(this.addlocation_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.deletelocation);
+            this.panel9.Location = new System.Drawing.Point(0, 106);
+            this.panel9.Margin = new System.Windows.Forms.Padding(0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(239, 53);
+            this.panel9.TabIndex = 7;
+            // 
+            // deletelocation
+            // 
+            this.deletelocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
+            this.deletelocation.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletelocation.Image = ((System.Drawing.Image)(resources.GetObject("deletelocation.Image")));
+            this.deletelocation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.deletelocation.Location = new System.Drawing.Point(-12, -14);
+            this.deletelocation.Name = "deletelocation";
+            this.deletelocation.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.deletelocation.Size = new System.Drawing.Size(266, 79);
+            this.deletelocation.TabIndex = 4;
+            this.deletelocation.Text = "Delete Location";
+            this.deletelocation.UseVisualStyleBackColor = false;
+            this.deletelocation.Click += new System.EventHandler(this.deletelocation_Click);
+            // 
             // Categorymenu
             // 
             this.Categorymenu.Controls.Add(this.panel30);
             this.Categorymenu.Controls.Add(this.panel31);
-            this.Categorymenu.Controls.Add(this.panel32);
             this.Categorymenu.Controls.Add(this.panel33);
             this.Categorymenu.ForeColor = System.Drawing.Color.White;
-            this.Categorymenu.Location = new System.Drawing.Point(0, 356);
+            this.Categorymenu.Location = new System.Drawing.Point(0, 460);
             this.Categorymenu.Margin = new System.Windows.Forms.Padding(0);
             this.Categorymenu.Name = "Categorymenu";
-            this.Categorymenu.Size = new System.Drawing.Size(239, 52);
+            this.Categorymenu.Size = new System.Drawing.Size(238, 52);
             this.Categorymenu.TabIndex = 13;
             // 
             // panel30
@@ -1034,34 +1127,10 @@
             this.AddCategory_Btn.UseVisualStyleBackColor = false;
             this.AddCategory_Btn.Click += new System.EventHandler(this.AddCategory_Btn_Click);
             // 
-            // panel32
-            // 
-            this.panel32.Controls.Add(this.UpdateCategory_Btn);
-            this.panel32.Location = new System.Drawing.Point(0, 106);
-            this.panel32.Margin = new System.Windows.Forms.Padding(0);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(239, 53);
-            this.panel32.TabIndex = 6;
-            // 
-            // UpdateCategory_Btn
-            // 
-            this.UpdateCategory_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(58)))), ((int)(((byte)(61)))));
-            this.UpdateCategory_Btn.Font = new System.Drawing.Font("Segoe UI Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateCategory_Btn.Image = ((System.Drawing.Image)(resources.GetObject("UpdateCategory_Btn.Image")));
-            this.UpdateCategory_Btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.UpdateCategory_Btn.Location = new System.Drawing.Point(-12, -14);
-            this.UpdateCategory_Btn.Name = "UpdateCategory_Btn";
-            this.UpdateCategory_Btn.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.UpdateCategory_Btn.Size = new System.Drawing.Size(266, 79);
-            this.UpdateCategory_Btn.TabIndex = 4;
-            this.UpdateCategory_Btn.Text = "Update Category";
-            this.UpdateCategory_Btn.UseVisualStyleBackColor = false;
-            this.UpdateCategory_Btn.Click += new System.EventHandler(this.UpdateCategory_Btn_Click);
-            // 
             // panel33
             // 
             this.panel33.Controls.Add(this.DeleteCategory_Btn);
-            this.panel33.Location = new System.Drawing.Point(0, 159);
+            this.panel33.Location = new System.Drawing.Point(0, 106);
             this.panel33.Margin = new System.Windows.Forms.Padding(0);
             this.panel33.Name = "panel33";
             this.panel33.Size = new System.Drawing.Size(239, 53);
@@ -1112,10 +1181,10 @@
             this.panel34.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(30)))), ((int)(((byte)(36)))));
             this.panel34.Controls.Add(this.tableLayoutPanel11);
             this.panel34.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel34.Location = new System.Drawing.Point(0, 588);
+            this.panel34.Location = new System.Drawing.Point(0, 609);
             this.panel34.Name = "panel34";
             this.panel34.Padding = new System.Windows.Forms.Padding(5);
-            this.panel34.Size = new System.Drawing.Size(921, 70);
+            this.panel34.Size = new System.Drawing.Size(921, 49);
             this.panel34.TabIndex = 13;
             this.panel34.Text = "panel34";
             // 
@@ -1126,7 +1195,7 @@
             this.tableLayoutPanel11.ColumnCount = 1;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.Controls.Add(this.skyLabel10, 0, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(349, 11);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(349, 0);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1140,11 +1209,16 @@
             this.skyLabel10.AutoSize = true;
             this.skyLabel10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.skyLabel10.ForeColor = System.Drawing.Color.White;
-            this.skyLabel10.Location = new System.Drawing.Point(5, 18);
+            this.skyLabel10.Location = new System.Drawing.Point(21, 19);
             this.skyLabel10.Name = "skyLabel10";
-            this.skyLabel10.Size = new System.Drawing.Size(217, 15);
+            this.skyLabel10.Size = new System.Drawing.Size(186, 12);
             this.skyLabel10.TabIndex = 13;
             this.skyLabel10.Text = "COPYRIGHT c All Right Reserved";
+            // 
+            // LocationTimer
+            // 
+            this.LocationTimer.Interval = 3;
+            this.LocationTimer.Tick += new System.EventHandler(this.LocationTimer_Tick);
             // 
             // Form1
             // 
@@ -1199,10 +1273,13 @@
             this.panel23.ResumeLayout(false);
             this.panel24.ResumeLayout(false);
             this.panel25.ResumeLayout(false);
+            this.locationmenu.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
             this.Categorymenu.ResumeLayout(false);
             this.panel30.ResumeLayout(false);
             this.panel31.ResumeLayout(false);
-            this.panel32.ResumeLayout(false);
             this.panel33.ResumeLayout(false);
             this.panel34.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
@@ -1286,8 +1363,6 @@
         private System.Windows.Forms.Button Categorymenubtn;
         private System.Windows.Forms.Panel panel31;
         private System.Windows.Forms.Button AddCategory_Btn;
-        private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.Button UpdateCategory_Btn;
         private System.Windows.Forms.Panel panel33;
         private System.Windows.Forms.Button DeleteCategory_Btn;
         private System.Windows.Forms.Timer Booktimer;
@@ -1297,6 +1372,14 @@
         private ReaLTaiizor.Panel panel34;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private ReaLTaiizor.SkyLabel skyLabel10;
+        private System.Windows.Forms.FlowLayoutPanel locationmenu;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Button manage;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button addlocation;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Button deletelocation;
+        private System.Windows.Forms.Timer LocationTimer;
     }
 }
 

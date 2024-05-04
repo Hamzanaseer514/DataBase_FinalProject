@@ -33,14 +33,14 @@
             this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dungeonTextBox1 = new ReaLTaiizor.DungeonTextBox();
+            this.fname = new ReaLTaiizor.DungeonTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dungeonTextBox3 = new ReaLTaiizor.DungeonTextBox();
+            this.lname = new ReaLTaiizor.DungeonTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dungeonTextBox2 = new ReaLTaiizor.DungeonTextBox();
+            this.auNationality = new ReaLTaiizor.DungeonTextBox();
             this.royalButton1 = new ReaLTaiizor.RoyalButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.date = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +62,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(845, 237);
             this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // foxBigLabel1
             // 
@@ -69,9 +70,9 @@
             this.foxBigLabel1.ForeColor = System.Drawing.Color.DarkCyan;
             this.foxBigLabel1.Line = ReaLTaiizor.FoxBigLabel.Direction.Bottom;
             this.foxBigLabel1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.foxBigLabel1.Location = new System.Drawing.Point(11, 10);
+            this.foxBigLabel1.Location = new System.Drawing.Point(12, 12);
             this.foxBigLabel1.Name = "foxBigLabel1";
-            this.foxBigLabel1.Size = new System.Drawing.Size(333, 60);
+            this.foxBigLabel1.Size = new System.Drawing.Size(332, 53);
             this.foxBigLabel1.TabIndex = 21;
             this.foxBigLabel1.Text = "UPDATE AUTHOR";
             // 
@@ -85,15 +86,15 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.fname, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox3, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lname, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.auNationality, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.royalButton1, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 354);
+            this.tableLayoutPanel1.Controls.Add(this.date, 3, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(21, 343);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -114,23 +115,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "First Name";
             // 
-            // dungeonTextBox1
+            // fname
             // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(240, 12);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = false;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(231, 33);
-            this.dungeonTextBox1.TabIndex = 2;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            this.fname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.fname.BackColor = System.Drawing.Color.Transparent;
+            this.fname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.fname.EdgeColor = System.Drawing.Color.White;
+            this.fname.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.fname.ForeColor = System.Drawing.Color.DimGray;
+            this.fname.Location = new System.Drawing.Point(240, 12);
+            this.fname.MaxLength = 32767;
+            this.fname.Multiline = false;
+            this.fname.Name = "fname";
+            this.fname.ReadOnly = false;
+            this.fname.Size = new System.Drawing.Size(231, 33);
+            this.fname.TabIndex = 2;
+            this.fname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.fname.UseSystemPasswordChar = false;
             // 
             // label3
             // 
@@ -144,23 +145,23 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Last Name";
             // 
-            // dungeonTextBox3
+            // lname
             // 
-            this.dungeonTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox3.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox3.Location = new System.Drawing.Point(714, 12);
-            this.dungeonTextBox3.MaxLength = 32767;
-            this.dungeonTextBox3.Multiline = false;
-            this.dungeonTextBox3.Name = "dungeonTextBox3";
-            this.dungeonTextBox3.ReadOnly = false;
-            this.dungeonTextBox3.Size = new System.Drawing.Size(232, 33);
-            this.dungeonTextBox3.TabIndex = 9;
-            this.dungeonTextBox3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox3.UseSystemPasswordChar = false;
+            this.lname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lname.BackColor = System.Drawing.Color.Transparent;
+            this.lname.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.lname.EdgeColor = System.Drawing.Color.White;
+            this.lname.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.lname.ForeColor = System.Drawing.Color.DimGray;
+            this.lname.Location = new System.Drawing.Point(714, 12);
+            this.lname.MaxLength = 32767;
+            this.lname.Multiline = false;
+            this.lname.Name = "lname";
+            this.lname.ReadOnly = false;
+            this.lname.Size = new System.Drawing.Size(232, 33);
+            this.lname.TabIndex = 9;
+            this.lname.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.lname.UseSystemPasswordChar = false;
             // 
             // label2
             // 
@@ -186,23 +187,24 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Date Of Birth";
             // 
-            // dungeonTextBox2
+            // auNationality
             // 
-            this.dungeonTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox2.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox2.Location = new System.Drawing.Point(240, 70);
-            this.dungeonTextBox2.MaxLength = 32767;
-            this.dungeonTextBox2.Multiline = false;
-            this.dungeonTextBox2.Name = "dungeonTextBox2";
-            this.dungeonTextBox2.ReadOnly = false;
-            this.dungeonTextBox2.Size = new System.Drawing.Size(231, 33);
-            this.dungeonTextBox2.TabIndex = 12;
-            this.dungeonTextBox2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox2.UseSystemPasswordChar = false;
+            this.auNationality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.auNationality.BackColor = System.Drawing.Color.Transparent;
+            this.auNationality.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.auNationality.EdgeColor = System.Drawing.Color.White;
+            this.auNationality.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.auNationality.ForeColor = System.Drawing.Color.DimGray;
+            this.auNationality.Location = new System.Drawing.Point(240, 70);
+            this.auNationality.MaxLength = 32767;
+            this.auNationality.Multiline = false;
+            this.auNationality.Name = "auNationality";
+            this.auNationality.ReadOnly = false;
+            this.auNationality.Size = new System.Drawing.Size(231, 33);
+            this.auNationality.TabIndex = 12;
+            this.auNationality.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.auNationality.UseSystemPasswordChar = false;
+            this.auNationality.TextChanged += new System.EventHandler(this.dungeonTextBox2_TextChanged);
             // 
             // royalButton1
             // 
@@ -224,14 +226,15 @@
             this.royalButton1.Size = new System.Drawing.Size(124, 47);
             this.royalButton1.TabIndex = 5;
             this.royalButton1.Text = "UPDATE";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
-            // dateTimePicker1
+            // date
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(714, 76);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 22);
-            this.dateTimePicker1.TabIndex = 13;
+            this.date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.date.Location = new System.Drawing.Point(714, 76);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(232, 22);
+            this.date.TabIndex = 13;
             // 
             // UpdateAuthor
             // 
@@ -256,13 +259,13 @@
         private ReaLTaiizor.FoxBigLabel foxBigLabel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.DungeonTextBox fname;
         private System.Windows.Forms.Label label3;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox3;
+        private ReaLTaiizor.DungeonTextBox lname;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox2;
+        private ReaLTaiizor.DungeonTextBox auNationality;
         private ReaLTaiizor.RoyalButton royalButton1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker date;
     }
 }

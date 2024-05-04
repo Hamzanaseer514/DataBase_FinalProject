@@ -1,78 +1,121 @@
-﻿using System;
+﻿using DBMidProject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace FinalProjectDB1.Forms.DeleteForms
 {
     public partial class DeletePublisher : Form
     {
+        string name;
+        string type;
+        string adress;
+        string language;
         public DeletePublisher()
         {
             InitializeComponent();
-            PopulateDataGridView();
+            ShowPublishers();
         }
 
         private void DeletePublisher_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
         }
-        private void PopulateDataGridView()
-        {
-            // Define book publishers
-            string[] publishers = { "Publisher A", "Publisher B", "Publisher C", "Publisher D" };
 
-            // Define languages
-            string[] languages = { "English", "Spanish", "French", "German" };
-
-            // Define book types
-            string[] bookTypes = { "Ebook", "Hardbook" };
-
-            // Define columns
-            dataGridView1.Columns.Add("Column1", "ID");
-            dataGridView1.Columns.Add("Column2", "Publisher Name");
-            dataGridView1.Columns.Add("Column3", "Language");
-            dataGridView1.Columns.Add("Column4", "Type");
-
-            // Generate and shuffle IDs
-            List<int> uniqueIDs = Enumerable.Range(1, 10).ToList();
-            Shuffle(uniqueIDs);
-
-            // Add rows with shuffled IDs and corresponding publisher information
-            foreach (int id in uniqueIDs)
-            {
-                string publisherName = publishers[id % publishers.Length]; // Cycling through publishers
-                string language = languages[id % languages.Length]; // Cycling through languages
-                string type = bookTypes[id % 2]; // Cycling between Ebook and Hardbook
-
-                dataGridView1.Rows.Add(
-                    id,   // Book ID
-                    publisherName,  // Publisher Name
-                    language,       // Language
-                    type            // Book Type
-                );
-            }
-        }
 
         // Helper method to shuffle a list
-        private void Shuffle<T>(List<T> list)
+
+
+        private void royalButton1_Click(object sender, EventArgs e)
         {
-            Random rng = new Random();
-            int n = list.Count;
-            while (n > 1)
+            if (string.IsNullOrEmpty(pname.Text) || string.IsNullOrEmpty(ptype.Text) || string.IsNullOrEmpty(pAdress.Text) || string.IsNullOrEmpty(planguage.Text))
             {
-                n--;
-                int k = rng.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
+                MessageBox.Show("Please Fill all the required fields");
+            }
+            else
+            {
+                string pubname1 = pname.Text;
+                string pubtype = ptype.Text;
+                string publan = planguage.Text;
+                string pubAdress = pAdress.Text;
+                int id = findID();
+                MessageBox.Show(id.ToString());
+                BL.Admin admin = new BL.Admin();
+                admin.DeletePublisher(pubname1, pubtype, publan, id, pubAdress, 0);
+                ShowPublishers();
             }
         }
+        private int findID()
+        {
+            int id = 0;
+            try
+            {
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("SELECT PublisherID FROM Publisher WHERE  PublisherName = @PublisherName AND PublicationLanguage = @PublisherLanguage AND PublisherAddress = @PublisherAddress", con);
+                cmd.Parameters.AddWithValue("@PublisherName", name);
+                cmd.Parameters.AddWithValue("@PublisherType", type);
+                cmd.Parameters.AddWithValue("@PublisherLanguage", language);
+                cmd.Parameters.AddWithValue("@PublisherAddress", adress);
+                id = (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
+            return id;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridView1.SelectedRows.Count > 0)
+                {
+                    pname.Text = dataGridView1.SelectedRows[0].Cells[0].Value?.ToString();
+                    ptype.Text = dataGridView1.SelectedRows[0].Cells[1].Value?.ToString();
+                    planguage.Text = dataGridView1.SelectedRows[0].Cells[2].Value?.ToString();
+                    pAdress.Text = dataGridView1.SelectedRows[0].Cells[3].Value?.ToString();
+
+                    name = pname.Text;
+                    type = ptype.Text;
+                    language = planguage.Text;
+                    adress = pAdress.Text;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred: " + ex.Message);
+            }
+        }
+        private void ShowPublishers()
+        {
+            try
+            {
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("SELECT PublisherName,PublicationType,PublicationLanguage,PublisherAddress FROM Publisher WHERE Status = 1", con);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

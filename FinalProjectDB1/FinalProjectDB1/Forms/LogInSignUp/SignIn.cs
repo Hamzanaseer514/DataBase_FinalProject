@@ -57,6 +57,9 @@ namespace FinalProjectDB1.Forms.LogInSignUp
                 else if (userType == "Staff")
                 {
                     MessageBox.Show("Welcome to Staff Menu", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Forms.Staff_Section.StaffMenu staffmenu = new Staff_Section.StaffMenu();
+                    this.Hide();
+                    staffmenu.Show();
                 }
                 else if (userType == null)
                 {
@@ -98,7 +101,7 @@ namespace FinalProjectDB1.Forms.LogInSignUp
             try
             {
                 var con = Configuration.getInstance().getConnection();
-                string query = "SELECT UserId FROM [User] WHERE Email = @Email AND Passsword = @Password";
+                string query = "SELECT UserId FROM [User] WHERE Email = @Email AND Password = @Password";
                 SqlCommand command = new SqlCommand(query, con);
                 command.Parameters.AddWithValue("@Email", email);
                 command.Parameters.AddWithValue("@Password", password);
@@ -118,6 +121,8 @@ namespace FinalProjectDB1.Forms.LogInSignUp
             return userId;
 
         }
+
+     
     }
 }
 

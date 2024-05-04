@@ -30,25 +30,25 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.Login = new System.Windows.Forms.PictureBox();
             this.ShowPassword = new System.Windows.Forms.CheckBox();
             this.logpassword = new System.Windows.Forms.TextBox();
             this.logEmail = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.Login = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,6 +84,19 @@
             this.label8.Size = new System.Drawing.Size(73, 30);
             this.label8.TabIndex = 18;
             this.label8.Text = "EXIT";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.pictureBox4.Image = global::FinalProjectDB1.Properties.Resources.exitto;
+            this.pictureBox4.Location = new System.Drawing.Point(320, 603);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(87, 55);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 17;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
             // label7
             // 
@@ -153,6 +166,18 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "New User?\r\n";
             // 
+            // Login
+            // 
+            this.Login.Image = global::FinalProjectDB1.Properties.Resources.login;
+            this.Login.Location = new System.Drawing.Point(200, 471);
+            this.Login.Margin = new System.Windows.Forms.Padding(4);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(223, 53);
+            this.Login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Login.TabIndex = 10;
+            this.Login.TabStop = false;
+            this.Login.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
             // ShowPassword
             // 
             this.ShowPassword.AutoSize = true;
@@ -202,6 +227,17 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Get Started From Here By Login";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FinalProjectDB1.Properties.Resources.user_logo1;
+            this.pictureBox2.Location = new System.Drawing.Point(240, 64);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(133, 117);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -213,42 +249,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox4.Image = global::FinalProjectDB1.Properties.Resources.exitto;
-            this.pictureBox4.Location = new System.Drawing.Point(320, 603);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(87, 55);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 17;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // Login
-            // 
-            this.Login.Image = global::FinalProjectDB1.Properties.Resources.login;
-            this.Login.Location = new System.Drawing.Point(200, 471);
-            this.Login.Margin = new System.Windows.Forms.Padding(4);
-            this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(223, 53);
-            this.Login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Login.TabIndex = 10;
-            this.Login.TabStop = false;
-            this.Login.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FinalProjectDB1.Properties.Resources.user_logo1;
-            this.pictureBox2.Location = new System.Drawing.Point(240, 64);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 117);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // SignIn
             // 
@@ -264,10 +264,10 @@
             this.Text = "SignIn";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Login)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

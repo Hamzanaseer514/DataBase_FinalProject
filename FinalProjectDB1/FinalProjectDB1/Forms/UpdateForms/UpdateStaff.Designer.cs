@@ -43,7 +43,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBoxEdit2 = new ReaLTaiizor.ComboBoxEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
+            this.comboBoxEdit2 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -78,12 +78,12 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox7, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 3, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 68);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -116,6 +116,7 @@
             this.royalButton1.Size = new System.Drawing.Size(122, 44);
             this.royalButton1.TabIndex = 16;
             this.royalButton1.Text = "UPDATE";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
             // label1
             // 
@@ -180,7 +181,7 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox1.Location = new System.Drawing.Point(269, 17);
@@ -193,7 +194,7 @@
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox2.Location = new System.Drawing.Point(269, 82);
@@ -206,7 +207,7 @@
             // textBox3
             // 
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox3.Location = new System.Drawing.Point(269, 147);
@@ -219,7 +220,7 @@
             // textBox4
             // 
             this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox4.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox4.Location = new System.Drawing.Point(269, 212);
@@ -274,7 +275,7 @@
             // textBox6
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox6.Location = new System.Drawing.Point(799, 212);
@@ -283,27 +284,6 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(259, 35);
             this.textBox6.TabIndex = 40;
-            // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxEdit2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.comboBoxEdit2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEdit2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEdit2.DropDownHeight = 100;
-            this.comboBoxEdit2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEdit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.comboBoxEdit2.FormattingEnabled = true;
-            this.comboBoxEdit2.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.comboBoxEdit2.IntegralHeight = false;
-            this.comboBoxEdit2.ItemHeight = 20;
-            this.comboBoxEdit2.Location = new System.Drawing.Point(799, 149);
-            this.comboBoxEdit2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Size = new System.Drawing.Size(259, 26);
-            this.comboBoxEdit2.StartIndex = 0;
-            this.comboBoxEdit2.TabIndex = 47;
             // 
             // label2
             // 
@@ -337,7 +317,7 @@
             // textBox5
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox5.Location = new System.Drawing.Point(799, 17);
@@ -350,7 +330,7 @@
             // textBox7
             // 
             this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox7.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox7.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox7.Location = new System.Drawing.Point(799, 82);
@@ -363,7 +343,7 @@
             // textBox8
             // 
             this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox8.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox8.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.textBox8.Location = new System.Drawing.Point(269, 279);
@@ -391,6 +371,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1062, 233);
             this.dataGridView1.TabIndex = 26;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // foxBigLabel1
             // 
@@ -403,6 +384,19 @@
             this.foxBigLabel1.Size = new System.Drawing.Size(338, 52);
             this.foxBigLabel1.TabIndex = 25;
             this.foxBigLabel1.Text = "UPDATE STAFF";
+            // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEdit2.FormattingEnabled = true;
+            this.comboBoxEdit2.Items.AddRange(new object[] {
+            "Librarian",
+            "Advisor",
+            "Senior Librarian"});
+            this.comboBoxEdit2.Location = new System.Drawing.Point(798, 150);
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Size = new System.Drawing.Size(261, 24);
+            this.comboBoxEdit2.TabIndex = 51;
             // 
             // UpdateStaff
             // 
@@ -439,7 +433,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox6;
-        private ReaLTaiizor.ComboBoxEdit comboBoxEdit2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
@@ -447,5 +440,6 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ReaLTaiizor.FoxBigLabel foxBigLabel1;
+        private System.Windows.Forms.ComboBox comboBoxEdit2;
     }
 }

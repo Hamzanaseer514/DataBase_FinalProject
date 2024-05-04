@@ -17,16 +17,18 @@ namespace FinalProjectDB1.BL
         public string PublicationLanguage { get; set; }
         public string PublisherAddress { get; set; }
 
+        public int Status { get; set; }
         public int UserID { get; set; }
 
         // Constructor
-        public Publisher(string publisherName, string publicationType, string publicationLanguage,int userid, string publisherAddress)
+        public Publisher(string publisherName, string publicationType, string publicationLanguage, int userid, string publisherAddress, int status)
         {
             PublisherName = publisherName;
             PublicationType = publicationType;
             PublicationLanguage = publicationLanguage;
             PublisherAddress = publisherAddress;
             UserID = userid;
+            Status = status;
         }
         public void addPublisherInDatabase()
         {
@@ -41,10 +43,60 @@ namespace FinalProjectDB1.BL
                 cmd.Parameters.AddWithValue("@PublicationLanguage", PublicationLanguage);
                 cmd.Parameters.AddWithValue("@UserID", UserID);
                 cmd.Parameters.AddWithValue("@PublisherAddress", PublisherAddress);
+                cmd.Parameters.AddWithValue("@Status", Status);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Publisher added Successfully");
 
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        public void UpdatePublisher()
+        {
+
+            try
+            {
+
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("UpdatePublisher", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PublisherName", PublisherName);
+                cmd.Parameters.AddWithValue("@PublicationType", PublicationType);
+                cmd.Parameters.AddWithValue("@PublicationLanguage", PublicationLanguage);
+                cmd.Parameters.AddWithValue("@PublisherID", UserID);
+                cmd.Parameters.AddWithValue("@PublisherAddress", PublisherAddress);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Publisher Updated Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+
+
+        }
+
+        public void DeletePublisher()
+        {
+            try
+            {
+
+                var con = Configuration.getInstance().getConnection();
+                SqlCommand cmd = new SqlCommand("DeletePublisher", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@PublisherName", PublisherName);
+                cmd.Parameters.AddWithValue("@PublicationType", PublicationType);
+                cmd.Parameters.AddWithValue("@PublicationLanguage", PublicationLanguage);
+                cmd.Parameters.AddWithValue("@PublisherID", UserID);
+                cmd.Parameters.AddWithValue("@PublisherAddress", PublisherAddress);
+                cmd.Parameters.AddWithValue("@Status", Status);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Publisher Deleted Successfully");
             }
             catch (Exception ex)
             {

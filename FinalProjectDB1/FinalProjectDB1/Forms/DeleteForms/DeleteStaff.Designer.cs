@@ -44,13 +44,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBoxEdit2 = new ReaLTaiizor.ComboBoxEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.comboBoxEdit2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,6 +73,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1062, 233);
             this.dataGridView1.TabIndex = 23;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // royalButton1
             // 
@@ -94,6 +95,7 @@
             this.royalButton1.Size = new System.Drawing.Size(122, 44);
             this.royalButton1.TabIndex = 16;
             this.royalButton1.Text = "DELETE";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
             // label1
             // 
@@ -270,27 +272,6 @@
             this.textBox6.Size = new System.Drawing.Size(259, 35);
             this.textBox6.TabIndex = 40;
             // 
-            // comboBoxEdit2
-            // 
-            this.comboBoxEdit2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.comboBoxEdit2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.comboBoxEdit2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEdit2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEdit2.DropDownHeight = 100;
-            this.comboBoxEdit2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEdit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.comboBoxEdit2.FormattingEnabled = true;
-            this.comboBoxEdit2.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.comboBoxEdit2.IntegralHeight = false;
-            this.comboBoxEdit2.ItemHeight = 20;
-            this.comboBoxEdit2.Location = new System.Drawing.Point(799, 149);
-            this.comboBoxEdit2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Size = new System.Drawing.Size(259, 26);
-            this.comboBoxEdit2.StartIndex = 0;
-            this.comboBoxEdit2.TabIndex = 47;
-            // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -381,12 +362,12 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox7, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBox8, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 3, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 72);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -398,6 +379,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1062, 328);
             this.tableLayoutPanel1.TabIndex = 21;
+            // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEdit2.FormattingEnabled = true;
+            this.comboBoxEdit2.Items.AddRange(new object[] {
+            "Librarian",
+            "Advisor",
+            "Senior Librarian"});
+            this.comboBoxEdit2.Location = new System.Drawing.Point(798, 150);
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Size = new System.Drawing.Size(261, 24);
+            this.comboBoxEdit2.TabIndex = 51;
             // 
             // DeleteStaff
             // 
@@ -435,12 +429,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox6;
-        private ReaLTaiizor.ComboBoxEdit comboBoxEdit2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ComboBox comboBoxEdit2;
     }
 }

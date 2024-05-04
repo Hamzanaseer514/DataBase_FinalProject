@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.sShelf = new System.Windows.Forms.TextBox();
+            this.sCapacity = new System.Windows.Forms.TextBox();
             this.royalButton1 = new ReaLTaiizor.RoyalButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
@@ -52,9 +52,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.royalButton1, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.sShelf, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.sCapacity, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.royalButton1, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 357);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -89,35 +89,35 @@
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.label9.Size = new System.Drawing.Size(143, 30);
+            this.label9.Size = new System.Drawing.Size(111, 30);
             this.label9.TabIndex = 24;
-            this.label9.Text = "Shelf Name";
+            this.label9.Text = "Capacity";
             // 
-            // textBox1
+            // sShelf
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox1.Location = new System.Drawing.Point(351, 32);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 9, 4, 4);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(339, 35);
-            this.textBox1.TabIndex = 32;
+            this.sShelf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.sShelf.BackColor = System.Drawing.SystemColors.Menu;
+            this.sShelf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sShelf.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.sShelf.Location = new System.Drawing.Point(351, 32);
+            this.sShelf.Margin = new System.Windows.Forms.Padding(4, 9, 4, 4);
+            this.sShelf.Multiline = true;
+            this.sShelf.Name = "sShelf";
+            this.sShelf.Size = new System.Drawing.Size(339, 35);
+            this.sShelf.TabIndex = 32;
             // 
-            // textBox2
+            // sCapacity
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox2.Location = new System.Drawing.Point(351, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 9, 4, 4);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(339, 35);
-            this.textBox2.TabIndex = 33;
+            this.sCapacity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.sCapacity.BackColor = System.Drawing.SystemColors.Menu;
+            this.sCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sCapacity.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.sCapacity.Location = new System.Drawing.Point(351, 127);
+            this.sCapacity.Margin = new System.Windows.Forms.Padding(4, 9, 4, 4);
+            this.sCapacity.Multiline = true;
+            this.sCapacity.Name = "sCapacity";
+            this.sCapacity.Size = new System.Drawing.Size(339, 35);
+            this.sCapacity.TabIndex = 33;
             // 
             // royalButton1
             // 
@@ -132,24 +132,26 @@
             this.royalButton1.HotTrackColor = System.Drawing.Color.LightSkyBlue;
             this.royalButton1.Image = null;
             this.royalButton1.LayoutFlags = ReaLTaiizor.RoyalLayoutFlags.ImageBeforeText;
-            this.royalButton1.Location = new System.Drawing.Point(917, 216);
+            this.royalButton1.Location = new System.Drawing.Point(569, 216);
             this.royalButton1.Name = "royalButton1";
             this.royalButton1.PressedColor = System.Drawing.Color.LightSkyBlue;
             this.royalButton1.PressedForeColor = System.Drawing.Color.Black;
             this.royalButton1.Size = new System.Drawing.Size(122, 44);
             this.royalButton1.TabIndex = 16;
             this.royalButton1.Text = "ADD";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkBlue;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Lavender;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.GhostWhite;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 77);
@@ -158,6 +160,7 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1042, 233);
             this.dataGridView1.TabIndex = 32;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // foxBigLabel1
             // 
@@ -195,8 +198,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox sShelf;
+        private System.Windows.Forms.TextBox sCapacity;
         private ReaLTaiizor.RoyalButton royalButton1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ReaLTaiizor.FoxBigLabel foxBigLabel1;

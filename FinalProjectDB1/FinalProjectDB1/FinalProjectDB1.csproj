@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI">
+      <HintPath>C:\Users\ameer\Downloads\Guna.UI-Framework-Lib-master\Guna.UI WinForms\.net 4.0\Guna.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="ReaLTaiizor, Version=3.7.7.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ReaLTaiizor.3.7.7\lib\net472\ReaLTaiizor.dll</HintPath>
@@ -53,25 +56,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddStudent.Designer.cs">
-      <DependentUpon>AddStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="BL\Admin.cs" />
     <Compile Include="BL\Author.cs" />
+    <Compile Include="BL\Book.cs" />
+    <Compile Include="BL\BookRequest.cs" />
     <Compile Include="BL\Category.cs" />
+    <Compile Include="BL\Location.cs" />
     <Compile Include="BL\Publisher.cs" />
+    <Compile Include="BL\Staff.cs" />
     <Compile Include="BL\Student.cs" />
     <Compile Include="BL\User.cs" />
     <Compile Include="Configuration.cs" />
-    <Compile Include="DeleteStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteStudent.Designer.cs">
-      <DependentUpon>DeleteStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +115,12 @@
     <Compile Include="Forms\AddForms\AddStaff.Designer.cs">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddForms\AddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddForms\AddStudent.Designer.cs">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DashBoard\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +151,12 @@
     <Compile Include="Forms\DeleteForms\DeleteCategory.Designer.cs">
       <DependentUpon>DeleteCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeleteForms\DeleteLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteForms\DeleteLocation.Designer.cs">
+      <DependentUpon>DeleteLocation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DeleteForms\DeletePublisher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +169,12 @@
     <Compile Include="Forms\DeleteForms\DeleteStaff.Designer.cs">
       <DependentUpon>DeleteStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DeleteForms\DeleteStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteForms\DeleteStudent.Designer.cs">
+      <DependentUpon>DeleteStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\LogInSignUp\SignIn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +186,84 @@
     </Compile>
     <Compile Include="Forms\LogInSignUp\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff Section\AccountSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff Section\AccountSetting.Designer.cs">
+      <DependentUpon>AccountSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff Section\BookIssuance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff Section\BookIssuance.Designer.cs">
+      <DependentUpon>BookIssuance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff Section\BrowseBorrowBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff Section\BrowseBorrowBook.Designer.cs">
+      <DependentUpon>BrowseBorrowBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff Section\CheckBookRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff Section\CheckBookRequest.Designer.cs">
+      <DependentUpon>CheckBookRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff Section\FineHandling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff Section\FineHandling.Designer.cs">
+      <DependentUpon>FineHandling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Staff Section\StaffMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Staff Section\StaffMenu.Designer.cs">
+      <DependentUpon>StaffMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\BookRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\BookRequest.Designer.cs">
+      <DependentUpon>BookRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\PayFine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\PayFine.Designer.cs">
+      <DependentUpon>PayFine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\Review.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\Review.Designer.cs">
+      <DependentUpon>Review.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\StudentMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\StudentMenu.Designer.cs">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\ViewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\ViewBook.Designer.cs">
+      <DependentUpon>ViewBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\ViewIssueBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\ViewIssueBook.Designer.cs">
+      <DependentUpon>ViewIssueBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Student Section\ViewPayedFine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Student Section\ViewPayedFine.Designer.cs">
+      <DependentUpon>ViewPayedFine.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\UpdateForms\UpdateAdmin.cs">
       <SubType>Form</SubType>
@@ -210,24 +301,18 @@
     <Compile Include="Forms\UpdateForms\UpdateStaff.Designer.cs">
       <DependentUpon>UpdateStaff.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateForms\UpdateStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateForms\UpdateStudent.Designer.cs">
+      <DependentUpon>UpdateStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mdiclient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="mdiProperties.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UpdateStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateStudent.Designer.cs">
-      <DependentUpon>UpdateStudent.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AddStudent.resx">
-      <DependentUpon>AddStudent.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteStudent.resx">
-      <DependentUpon>DeleteStudent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,6 +337,9 @@
     <EmbeddedResource Include="Forms\AddForms\AddStaff.resx">
       <DependentUpon>AddStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddForms\AddStudent.resx">
+      <DependentUpon>AddStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashBoard\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,17 +355,62 @@
     <EmbeddedResource Include="Forms\DeleteForms\DeleteCategory.resx">
       <DependentUpon>DeleteCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteForms\DeleteLocation.resx">
+      <DependentUpon>DeleteLocation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteForms\DeletePublisher.resx">
       <DependentUpon>DeletePublisher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DeleteForms\DeleteStaff.resx">
       <DependentUpon>DeleteStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteForms\DeleteStudent.resx">
+      <DependentUpon>DeleteStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogInSignUp\SignIn.resx">
       <DependentUpon>SignIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\LogInSignUp\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff Section\AccountSetting.resx">
+      <DependentUpon>AccountSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff Section\BookIssuance.resx">
+      <DependentUpon>BookIssuance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff Section\BrowseBorrowBook.resx">
+      <DependentUpon>BrowseBorrowBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff Section\CheckBookRequest.resx">
+      <DependentUpon>CheckBookRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff Section\FineHandling.resx">
+      <DependentUpon>FineHandling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Staff Section\StaffMenu.resx">
+      <DependentUpon>StaffMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\BookRequest.resx">
+      <DependentUpon>BookRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\PayFine.resx">
+      <DependentUpon>PayFine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\Review.resx">
+      <DependentUpon>Review.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\StudentMenu.resx">
+      <DependentUpon>StudentMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\ViewBook.resx">
+      <DependentUpon>ViewBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\ViewIssueBook.resx">
+      <DependentUpon>ViewIssueBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Student Section\ViewPayedFine.resx">
+      <DependentUpon>ViewPayedFine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForms\UpdateAdmin.resx">
       <DependentUpon>UpdateAdmin.cs</DependentUpon>
@@ -297,6 +430,9 @@
     <EmbeddedResource Include="Forms\UpdateForms\UpdateStaff.resx">
       <DependentUpon>UpdateStaff.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForms\UpdateStudent.resx">
+      <DependentUpon>UpdateStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -307,9 +443,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UpdateStudent.resx">
-      <DependentUpon>UpdateStudent.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -339,5 +472,6 @@
   <ItemGroup>
     <None Include="Resources\login.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

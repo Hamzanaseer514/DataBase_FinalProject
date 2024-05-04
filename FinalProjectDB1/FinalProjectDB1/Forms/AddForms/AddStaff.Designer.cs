@@ -30,11 +30,9 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.royalButton1 = new ReaLTaiizor.RoyalButton();
-            this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -43,13 +41,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBoxEdit2 = new ReaLTaiizor.ComboBoxEdit();
+            this.label2 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
+            this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.comboBoxEdit2 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,6 +64,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.royalButton1, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 1);
@@ -77,7 +78,6 @@
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.textBox6, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.textBox5, 3, 0);
@@ -115,18 +115,7 @@
             this.royalButton1.Size = new System.Drawing.Size(111, 44);
             this.royalButton1.TabIndex = 16;
             this.royalButton1.Text = "ADD";
-            // 
-            // foxBigLabel1
-            // 
-            this.foxBigLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.foxBigLabel1.ForeColor = System.Drawing.Color.Teal;
-            this.foxBigLabel1.Line = ReaLTaiizor.FoxBigLabel.Direction.Bottom;
-            this.foxBigLabel1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(192)))), ((int)(((byte)(232)))));
-            this.foxBigLabel1.Location = new System.Drawing.Point(2, 6);
-            this.foxBigLabel1.Name = "foxBigLabel1";
-            this.foxBigLabel1.Size = new System.Drawing.Size(307, 52);
-            this.foxBigLabel1.TabIndex = 19;
-            this.foxBigLabel1.Text = "ADD STAFF";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
             // label1
             // 
@@ -169,20 +158,6 @@
             this.label10.Size = new System.Drawing.Size(79, 30);
             this.label10.TabIndex = 25;
             this.label10.Text = "Email";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Teal;
-            this.label2.Location = new System.Drawing.Point(4, 278);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.label2.Size = new System.Drawing.Size(100, 30);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Contact";
             // 
             // label11
             // 
@@ -292,19 +267,6 @@
             this.label5.TabIndex = 38;
             this.label5.Text = "Salary";
             // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox5.Location = new System.Drawing.Point(799, 17);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 9, 4, 4);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(259, 35);
-            this.textBox5.TabIndex = 39;
-            // 
             // textBox6
             // 
             this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -318,28 +280,19 @@
             this.textBox6.Size = new System.Drawing.Size(259, 35);
             this.textBox6.TabIndex = 40;
             // 
-            // comboBoxEdit2
+            // label2
             // 
-            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(246)))), ((int)(((byte)(246)))));
-            this.comboBoxEdit2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEdit2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEdit2.DropDownHeight = 100;
-            this.comboBoxEdit2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEdit2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.comboBoxEdit2.FormattingEnabled = true;
-            this.comboBoxEdit2.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.comboBoxEdit2.IntegralHeight = false;
-            this.comboBoxEdit2.ItemHeight = 20;
-            this.comboBoxEdit2.Items.AddRange(new object[] {
-            "senior librarian"});
-            this.comboBoxEdit2.Location = new System.Drawing.Point(799, 149);
-            this.comboBoxEdit2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Size = new System.Drawing.Size(259, 26);
-            this.comboBoxEdit2.StartIndex = 0;
-            this.comboBoxEdit2.TabIndex = 47;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Teal;
+            this.label2.Location = new System.Drawing.Point(4, 278);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.label2.Size = new System.Drawing.Size(100, 30);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Contact";
             // 
             // label6
             // 
@@ -354,6 +307,19 @@
             this.label6.Size = new System.Drawing.Size(60, 30);
             this.label6.TabIndex = 48;
             this.label6.Text = "City";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textBox5.Location = new System.Drawing.Point(799, 17);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(4, 9, 4, 4);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(259, 35);
+            this.textBox5.TabIndex = 39;
             // 
             // textBox7
             // 
@@ -381,6 +347,18 @@
             this.textBox8.Size = new System.Drawing.Size(257, 35);
             this.textBox8.TabIndex = 50;
             // 
+            // foxBigLabel1
+            // 
+            this.foxBigLabel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.foxBigLabel1.ForeColor = System.Drawing.Color.Teal;
+            this.foxBigLabel1.Line = ReaLTaiizor.FoxBigLabel.Direction.Bottom;
+            this.foxBigLabel1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(192)))), ((int)(((byte)(232)))));
+            this.foxBigLabel1.Location = new System.Drawing.Point(2, 6);
+            this.foxBigLabel1.Name = "foxBigLabel1";
+            this.foxBigLabel1.Size = new System.Drawing.Size(307, 52);
+            this.foxBigLabel1.TabIndex = 19;
+            this.foxBigLabel1.Text = "ADD STAFF";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -394,6 +372,20 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1062, 233);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // comboBoxEdit2
+            // 
+            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEdit2.FormattingEnabled = true;
+            this.comboBoxEdit2.Items.AddRange(new object[] {
+            "Librarian",
+            "Advisor",
+            "Senior Librarian"});
+            this.comboBoxEdit2.Location = new System.Drawing.Point(798, 150);
+            this.comboBoxEdit2.Name = "comboBoxEdit2";
+            this.comboBoxEdit2.Size = new System.Drawing.Size(261, 24);
+            this.comboBoxEdit2.TabIndex = 48;
             // 
             // AddStaff
             // 
@@ -433,10 +425,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox6;
-        private ReaLTaiizor.ComboBoxEdit comboBoxEdit2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ComboBox comboBoxEdit2;
     }
 }

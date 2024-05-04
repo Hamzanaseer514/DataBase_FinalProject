@@ -21,14 +21,14 @@ namespace FinalProjectDB1.BL
         public string Department { get; set; }
         public int Semester { get; set; }
         public int Status { get; set; }
+
+        public int UserID { get; set; }
         public DateTime StudentShip_StartDate { get; set; }
 
         public Student() : base()
         {
 
         }
-
-        // Parameterized constructor
         public Student(string firstName, string lastName, string email, string password, string contact, long cnic, string city, string usertype, string registrationNo, string department, int semester, int status, DateTime studentShip_StartDate)
             : base(firstName, lastName, email, password, contact, cnic, city, usertype)
         {
@@ -38,6 +38,16 @@ namespace FinalProjectDB1.BL
             Status = status;
             StudentShip_StartDate = studentShip_StartDate;
         }
+        public Student(string firstName, string lastName, string email, string password, string contact, long cnic, string city, string usertype, string registrationNo, string department, int semester, int status, DateTime studentShip_StartDate, int userid)
+            : base(firstName, lastName, email, password, contact, cnic, city, usertype)
+        {
+            RegistrationNo = registrationNo;
+            Department = department;
+            Semester = semester;
+            Status = status;
+            StudentShip_StartDate = studentShip_StartDate;
+            UserID = userid;
+        }
 
         public void SignUp()
         {
@@ -45,7 +55,7 @@ namespace FinalProjectDB1.BL
             {
 
                 var con = Configuration.getInstance().getConnection();
-                string userInsertQuery = "INSERT INTO [User] (FirstName, LastName, Email, Passsword, Contact, CNIC, City, UserType) " +
+                string userInsertQuery = "INSERT INTO [User] (FirstName, LastName, Email, Password, Contact, CNIC, City, UserType) " +
                              "VALUES (@FirstName, @LastName, @Email, @Password, @Contact, @CNIC, @City,@UserType); SELECT SCOPE_IDENTITY()";
                 SqlCommand userCommand = new SqlCommand(userInsertQuery, con);
                 userCommand.Parameters.AddWithValue("@FirstName", FirstName);
@@ -83,7 +93,7 @@ namespace FinalProjectDB1.BL
             {
 
                 var con = Configuration.getInstance().getConnection();
-                string query = "SELECT * FROM [User] WHERE Email = @Email AND Passsword = @Password";
+                string query = "SELECT * FROM [User] WHERE Email = @Email AND Password = @Password";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Password", password);
@@ -106,8 +116,122 @@ namespace FinalProjectDB1.BL
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
-          return  null;
+            return null;
         }
 
+        public void AddStudentInDatabase()
+        {
+            SqlTransaction transaction = null;
+
+            try
+            {
+
+                var con = Configuration.getInstance().getConnection();
+                transaction = con.BeginTransaction();
+                SqlCommand cmd = new SqlCommand("AddStudent", con, transaction);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                cmd.Parameters.AddWithValue("@LastName", LastName);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@Password", Password);
+                cmd.Parameters.AddWithValue("@Contact", Contact);
+                cmd.Parameters.AddWithValue("@CNIC", CNIC);
+                cmd.Parameters.AddWithValue("@City", City);
+                cmd.Parameters.AddWithValue("@UserType", UserType);
+                cmd.Parameters.AddWithValue("@RegistrationNo", RegistrationNo);
+                cmd.Parameters.AddWithValue("@Department", Department);
+                cmd.Parameters.AddWithValue("@Semester", Semester);
+                cmd.Parameters.AddWithValue("@Status", Status);
+                cmd.Parameters.AddWithValue("@StudentShip_StartDate", StudentShip_StartDate);
+                cmd.ExecuteNonQuery();
+                transaction.Commit();
+                MessageBox.Show("Student Added successfully");
+
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+        }
+
+        public void UpdateStudentInDatabase()
+        {
+            SqlTransaction transaction = null;
+
+           
+
+                var con = Configuration.getInstance().getConnection();
+                transaction = con.BeginTransaction();
+                SqlCommand cmd = new SqlCommand("UpdateStudent", con, transaction);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                cmd.Parameters.AddWithValue("@LastName", LastName);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@Password", Password);
+                cmd.Parameters.AddWithValue("@Contact", Contact);
+                cmd.Parameters.AddWithValue("@CNIC", CNIC);
+                cmd.Parameters.AddWithValue("@City", City);
+                cmd.Parameters.AddWithValue("@UserType", UserType);
+                cmd.Parameters.AddWithValue("@RegistrationNo", RegistrationNo);
+                cmd.Parameters.AddWithValue("@Department", Department);
+                cmd.Parameters.AddWithValue("@Semester", Semester);
+                cmd.Parameters.AddWithValue("@Status", Status);
+                cmd.Parameters.AddWithValue("@StudentShip_StartDate", StudentShip_StartDate);
+                cmd.Parameters.AddWithValue("@UserID", UserID);
+                cmd.ExecuteNonQuery();
+                transaction.Commit();
+                MessageBox.Show("Student Updated successfully");
+
+           
+            
+
+        }
+
+        public void RemoveStudentFromDatabase()
+        {
+            SqlTransaction transaction = null;
+
+                MessageBox.Show(UserID.ToString());
+            try
+            {
+
+                var con = Configuration.getInstance().getConnection();
+                transaction = con.BeginTransaction();
+                SqlCommand cmd = new SqlCommand("DeleteStudent", con, transaction);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@FirstName", FirstName);
+                cmd.Parameters.AddWithValue("@LastName", LastName);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@Password", Password);
+                cmd.Parameters.AddWithValue("@Contact", Contact);
+                cmd.Parameters.AddWithValue("@CNIC", CNIC);
+                cmd.Parameters.AddWithValue("@City", City);
+                cmd.Parameters.AddWithValue("@UserType", UserType);
+                cmd.Parameters.AddWithValue("@RegistrationNo", RegistrationNo);
+                cmd.Parameters.AddWithValue("@Department", Department);
+                cmd.Parameters.AddWithValue("@Semester", Semester);
+                cmd.Parameters.AddWithValue("@Status", Status);
+                cmd.Parameters.AddWithValue("@UserID", UserID);
+                cmd.ExecuteNonQuery();
+                transaction.Commit();
+                MessageBox.Show("Student Deleted successfully");
+
+            }
+            catch (Exception ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+
+
+        }
     }
 }

@@ -42,25 +42,7 @@ namespace FinalProjectDB1.Forms.DashBoard
 
         private void royalButton2_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            dataGridView1.Columns.Clear();
-            Random random = new Random();
-            // Clear all rows and columns from the DataGridView
-
-
-
-            // Define columns
-            dataGridView1.Columns.Add("BOok", "BOok 1");
-            dataGridView1.Columns.Add("BOok", "BOok 2");
-
-            // Add rows with random data
-            for (int i = 0; i < 10; i++)
-            {
-                dataGridView1.Rows.Add(
-                    random.Next(100),   // Random integer for Column1
-                    random.NextDouble() // Random double for Column2
-                );
-            }
+            
         }
 
         private void showTotalStudent()

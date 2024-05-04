@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.royalButton1 = new ReaLTaiizor.RoyalButton();
-            this.comboBoxEdit3 = new ReaLTaiizor.ComboBoxEdit();
-            this.dungeonTextBox5 = new ReaLTaiizor.DungeonTextBox();
-            this.dungeonTextBox4 = new ReaLTaiizor.DungeonTextBox();
-            this.dungeonTextBox3 = new ReaLTaiizor.DungeonTextBox();
-            this.comboBoxEdit2 = new ReaLTaiizor.ComboBoxEdit();
-            this.dungeonTextBox1 = new ReaLTaiizor.DungeonTextBox();
+            this.bLocation = new ReaLTaiizor.ComboBoxEdit();
+            this.bAbooks = new ReaLTaiizor.DungeonTextBox();
+            this.bTcopies = new ReaLTaiizor.DungeonTextBox();
+            this.bEdition = new ReaLTaiizor.DungeonTextBox();
+            this.bPublisher = new ReaLTaiizor.ComboBoxEdit();
+            this.bTitle = new ReaLTaiizor.DungeonTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,17 +44,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dungeonTextBox2 = new ReaLTaiizor.DungeonTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxEdit1 = new ReaLTaiizor.ComboBoxEdit();
+            this.bIsbn = new ReaLTaiizor.DungeonTextBox();
+            this.bPublicationDate = new System.Windows.Forms.DateTimePicker();
+            this.bCategory = new ReaLTaiizor.ComboBoxEdit();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.foxBigLabel1 = new ReaLTaiizor.FoxBigLabel();
+            this.bAuthor = new ReaLTaiizor.ComboBoxEdit();
+            this.Author = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // royalButton1
             // 
-            this.royalButton1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.royalButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.royalButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.royalButton1.BorderColor = System.Drawing.Color.Transparent;
             this.royalButton1.BorderThickness = 3;
@@ -65,125 +67,126 @@
             this.royalButton1.HotTrackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.royalButton1.Image = null;
             this.royalButton1.LayoutFlags = ReaLTaiizor.RoyalLayoutFlags.ImageBeforeText;
-            this.royalButton1.Location = new System.Drawing.Point(728, 290);
+            this.royalButton1.Location = new System.Drawing.Point(815, 493);
             this.royalButton1.Name = "royalButton1";
             this.royalButton1.PressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.royalButton1.PressedForeColor = System.Drawing.Color.Black;
             this.royalButton1.Size = new System.Drawing.Size(149, 60);
             this.royalButton1.TabIndex = 16;
             this.royalButton1.Text = "ADD";
+            this.royalButton1.Click += new System.EventHandler(this.royalButton1_Click);
             // 
-            // comboBoxEdit3
+            // bLocation
             // 
-            this.comboBoxEdit3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.comboBoxEdit3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEdit3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEdit3.DropDownHeight = 100;
-            this.comboBoxEdit3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEdit3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxEdit3.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxEdit3.FormattingEnabled = true;
-            this.comboBoxEdit3.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.comboBoxEdit3.IntegralHeight = false;
-            this.comboBoxEdit3.ItemHeight = 20;
-            this.comboBoxEdit3.Location = new System.Drawing.Point(663, 235);
-            this.comboBoxEdit3.Name = "comboBoxEdit3";
-            this.comboBoxEdit3.Size = new System.Drawing.Size(214, 26);
-            this.comboBoxEdit3.StartIndex = 0;
-            this.comboBoxEdit3.TabIndex = 22;
+            this.bLocation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bLocation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.bLocation.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bLocation.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bLocation.DropDownHeight = 100;
+            this.bLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bLocation.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bLocation.ForeColor = System.Drawing.Color.Black;
+            this.bLocation.FormattingEnabled = true;
+            this.bLocation.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.bLocation.IntegralHeight = false;
+            this.bLocation.ItemHeight = 20;
+            this.bLocation.Location = new System.Drawing.Point(663, 235);
+            this.bLocation.Name = "bLocation";
+            this.bLocation.Size = new System.Drawing.Size(214, 26);
+            this.bLocation.StartIndex = 0;
+            this.bLocation.TabIndex = 22;
             // 
-            // dungeonTextBox5
+            // bAbooks
             // 
-            this.dungeonTextBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox5.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox5.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox5.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox5.Location = new System.Drawing.Point(663, 161);
-            this.dungeonTextBox5.MaxLength = 32767;
-            this.dungeonTextBox5.Multiline = false;
-            this.dungeonTextBox5.Name = "dungeonTextBox5";
-            this.dungeonTextBox5.ReadOnly = false;
-            this.dungeonTextBox5.Size = new System.Drawing.Size(214, 33);
-            this.dungeonTextBox5.TabIndex = 21;
-            this.dungeonTextBox5.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox5.UseSystemPasswordChar = false;
+            this.bAbooks.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bAbooks.BackColor = System.Drawing.Color.Transparent;
+            this.bAbooks.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bAbooks.EdgeColor = System.Drawing.Color.White;
+            this.bAbooks.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.bAbooks.ForeColor = System.Drawing.Color.DimGray;
+            this.bAbooks.Location = new System.Drawing.Point(663, 161);
+            this.bAbooks.MaxLength = 32767;
+            this.bAbooks.Multiline = false;
+            this.bAbooks.Name = "bAbooks";
+            this.bAbooks.ReadOnly = false;
+            this.bAbooks.Size = new System.Drawing.Size(214, 33);
+            this.bAbooks.TabIndex = 21;
+            this.bAbooks.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bAbooks.UseSystemPasswordChar = false;
             // 
-            // dungeonTextBox4
+            // bTcopies
             // 
-            this.dungeonTextBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox4.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox4.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox4.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox4.Location = new System.Drawing.Point(663, 90);
-            this.dungeonTextBox4.MaxLength = 32767;
-            this.dungeonTextBox4.Multiline = false;
-            this.dungeonTextBox4.Name = "dungeonTextBox4";
-            this.dungeonTextBox4.ReadOnly = false;
-            this.dungeonTextBox4.Size = new System.Drawing.Size(214, 33);
-            this.dungeonTextBox4.TabIndex = 20;
-            this.dungeonTextBox4.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox4.UseSystemPasswordChar = false;
+            this.bTcopies.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bTcopies.BackColor = System.Drawing.Color.Transparent;
+            this.bTcopies.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bTcopies.EdgeColor = System.Drawing.Color.White;
+            this.bTcopies.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.bTcopies.ForeColor = System.Drawing.Color.DimGray;
+            this.bTcopies.Location = new System.Drawing.Point(663, 90);
+            this.bTcopies.MaxLength = 32767;
+            this.bTcopies.Multiline = false;
+            this.bTcopies.Name = "bTcopies";
+            this.bTcopies.ReadOnly = false;
+            this.bTcopies.Size = new System.Drawing.Size(214, 33);
+            this.bTcopies.TabIndex = 20;
+            this.bTcopies.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bTcopies.UseSystemPasswordChar = false;
             // 
-            // dungeonTextBox3
+            // bEdition
             // 
-            this.dungeonTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox3.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox3.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox3.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox3.Location = new System.Drawing.Point(663, 19);
-            this.dungeonTextBox3.MaxLength = 32767;
-            this.dungeonTextBox3.Multiline = false;
-            this.dungeonTextBox3.Name = "dungeonTextBox3";
-            this.dungeonTextBox3.ReadOnly = false;
-            this.dungeonTextBox3.Size = new System.Drawing.Size(214, 33);
-            this.dungeonTextBox3.TabIndex = 19;
-            this.dungeonTextBox3.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox3.UseSystemPasswordChar = false;
+            this.bEdition.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bEdition.BackColor = System.Drawing.Color.Transparent;
+            this.bEdition.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bEdition.EdgeColor = System.Drawing.Color.White;
+            this.bEdition.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.bEdition.ForeColor = System.Drawing.Color.DimGray;
+            this.bEdition.Location = new System.Drawing.Point(663, 19);
+            this.bEdition.MaxLength = 32767;
+            this.bEdition.Multiline = false;
+            this.bEdition.Name = "bEdition";
+            this.bEdition.ReadOnly = false;
+            this.bEdition.Size = new System.Drawing.Size(214, 33);
+            this.bEdition.TabIndex = 19;
+            this.bEdition.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bEdition.UseSystemPasswordChar = false;
             // 
-            // comboBoxEdit2
+            // bPublisher
             // 
-            this.comboBoxEdit2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.comboBoxEdit2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEdit2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEdit2.DropDownHeight = 100;
-            this.comboBoxEdit2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEdit2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxEdit2.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxEdit2.FormattingEnabled = true;
-            this.comboBoxEdit2.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.comboBoxEdit2.IntegralHeight = false;
-            this.comboBoxEdit2.ItemHeight = 20;
-            this.comboBoxEdit2.Location = new System.Drawing.Point(223, 235);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Size = new System.Drawing.Size(214, 26);
-            this.comboBoxEdit2.StartIndex = 0;
-            this.comboBoxEdit2.TabIndex = 18;
+            this.bPublisher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bPublisher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.bPublisher.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bPublisher.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bPublisher.DropDownHeight = 100;
+            this.bPublisher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bPublisher.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bPublisher.ForeColor = System.Drawing.Color.Black;
+            this.bPublisher.FormattingEnabled = true;
+            this.bPublisher.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.bPublisher.IntegralHeight = false;
+            this.bPublisher.ItemHeight = 20;
+            this.bPublisher.Location = new System.Drawing.Point(223, 235);
+            this.bPublisher.Name = "bPublisher";
+            this.bPublisher.Size = new System.Drawing.Size(214, 26);
+            this.bPublisher.StartIndex = 0;
+            this.bPublisher.TabIndex = 18;
             // 
-            // dungeonTextBox1
+            // bTitle
             // 
-            this.dungeonTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox1.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox1.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox1.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox1.Location = new System.Drawing.Point(223, 19);
-            this.dungeonTextBox1.MaxLength = 32767;
-            this.dungeonTextBox1.Multiline = false;
-            this.dungeonTextBox1.Name = "dungeonTextBox1";
-            this.dungeonTextBox1.ReadOnly = false;
-            this.dungeonTextBox1.Size = new System.Drawing.Size(214, 33);
-            this.dungeonTextBox1.TabIndex = 15;
-            this.dungeonTextBox1.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox1.UseSystemPasswordChar = false;
+            this.bTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bTitle.BackColor = System.Drawing.Color.Transparent;
+            this.bTitle.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bTitle.EdgeColor = System.Drawing.Color.White;
+            this.bTitle.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.bTitle.ForeColor = System.Drawing.Color.DimGray;
+            this.bTitle.Location = new System.Drawing.Point(223, 19);
+            this.bTitle.MaxLength = 32767;
+            this.bTitle.Multiline = false;
+            this.bTitle.Name = "bTitle";
+            this.bTitle.ReadOnly = false;
+            this.bTitle.Size = new System.Drawing.Size(214, 33);
+            this.bTitle.TabIndex = 15;
+            this.bTitle.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bTitle.UseSystemPasswordChar = false;
             // 
             // label9
             // 
@@ -256,6 +259,7 @@
             this.label6.Size = new System.Drawing.Size(151, 27);
             this.label6.TabIndex = 7;
             this.label6.Text = "Total Copies";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -293,51 +297,51 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Category";
             // 
-            // dungeonTextBox2
+            // bIsbn
             // 
-            this.dungeonTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dungeonTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.dungeonTextBox2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.dungeonTextBox2.EdgeColor = System.Drawing.Color.White;
-            this.dungeonTextBox2.Font = new System.Drawing.Font("Tahoma", 11F);
-            this.dungeonTextBox2.ForeColor = System.Drawing.Color.DimGray;
-            this.dungeonTextBox2.Location = new System.Drawing.Point(223, 90);
-            this.dungeonTextBox2.MaxLength = 32767;
-            this.dungeonTextBox2.Multiline = false;
-            this.dungeonTextBox2.Name = "dungeonTextBox2";
-            this.dungeonTextBox2.ReadOnly = false;
-            this.dungeonTextBox2.Size = new System.Drawing.Size(214, 33);
-            this.dungeonTextBox2.TabIndex = 16;
-            this.dungeonTextBox2.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
-            this.dungeonTextBox2.UseSystemPasswordChar = false;
+            this.bIsbn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bIsbn.BackColor = System.Drawing.Color.Transparent;
+            this.bIsbn.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.bIsbn.EdgeColor = System.Drawing.Color.White;
+            this.bIsbn.Font = new System.Drawing.Font("Tahoma", 11F);
+            this.bIsbn.ForeColor = System.Drawing.Color.DimGray;
+            this.bIsbn.Location = new System.Drawing.Point(223, 90);
+            this.bIsbn.MaxLength = 32767;
+            this.bIsbn.Multiline = false;
+            this.bIsbn.Name = "bIsbn";
+            this.bIsbn.ReadOnly = false;
+            this.bIsbn.Size = new System.Drawing.Size(214, 33);
+            this.bIsbn.TabIndex = 16;
+            this.bIsbn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bIsbn.UseSystemPasswordChar = false;
             // 
-            // dateTimePicker1
+            // bPublicationDate
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(223, 309);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(214, 22);
-            this.dateTimePicker1.TabIndex = 15;
+            this.bPublicationDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bPublicationDate.Location = new System.Drawing.Point(223, 309);
+            this.bPublicationDate.Name = "bPublicationDate";
+            this.bPublicationDate.Size = new System.Drawing.Size(214, 22);
+            this.bPublicationDate.TabIndex = 15;
             // 
-            // comboBoxEdit1
+            // bCategory
             // 
-            this.comboBoxEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBoxEdit1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.comboBoxEdit1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBoxEdit1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEdit1.DropDownHeight = 100;
-            this.comboBoxEdit1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxEdit1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.comboBoxEdit1.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxEdit1.FormattingEnabled = true;
-            this.comboBoxEdit1.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.comboBoxEdit1.IntegralHeight = false;
-            this.comboBoxEdit1.ItemHeight = 20;
-            this.comboBoxEdit1.Location = new System.Drawing.Point(223, 164);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Size = new System.Drawing.Size(214, 26);
-            this.comboBoxEdit1.StartIndex = 0;
-            this.comboBoxEdit1.TabIndex = 18;
+            this.bCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bCategory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.bCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bCategory.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bCategory.DropDownHeight = 100;
+            this.bCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bCategory.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bCategory.ForeColor = System.Drawing.Color.Black;
+            this.bCategory.FormattingEnabled = true;
+            this.bCategory.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.bCategory.IntegralHeight = false;
+            this.bCategory.ItemHeight = 20;
+            this.bCategory.Location = new System.Drawing.Point(223, 164);
+            this.bCategory.Name = "bCategory";
+            this.bCategory.Size = new System.Drawing.Size(214, 26);
+            this.bCategory.StartIndex = 0;
+            this.bCategory.TabIndex = 18;
             // 
             // tableLayoutPanel1
             // 
@@ -350,13 +354,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.royalButton1, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit3, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox5, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox4, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox3, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit2, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bLocation, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.bAbooks, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bTcopies, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.bAuthor, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.bEdition, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bPublisher, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.bTitle, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label9, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 3);
@@ -366,9 +370,10 @@
             this.tableLayoutPanel1.Controls.Add(this.label7, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label8, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.dungeonTextBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.comboBoxEdit1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bIsbn, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.bPublicationDate, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.bCategory, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.Author, 2, 4);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(84, 108);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
@@ -392,12 +397,45 @@
             this.foxBigLabel1.TabIndex = 16;
             this.foxBigLabel1.Text = "ADD BOOK";
             // 
+            // bAuthor
+            // 
+            this.bAuthor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.bAuthor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.bAuthor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bAuthor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.bAuthor.DropDownHeight = 100;
+            this.bAuthor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bAuthor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.bAuthor.ForeColor = System.Drawing.Color.Black;
+            this.bAuthor.FormattingEnabled = true;
+            this.bAuthor.HoverSelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.bAuthor.IntegralHeight = false;
+            this.bAuthor.ItemHeight = 20;
+            this.bAuthor.Location = new System.Drawing.Point(663, 307);
+            this.bAuthor.Name = "bAuthor";
+            this.bAuthor.Size = new System.Drawing.Size(214, 26);
+            this.bAuthor.StartIndex = 0;
+            this.bAuthor.TabIndex = 24;
+            // 
+            // Author
+            // 
+            this.Author.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Author.AutoSize = true;
+            this.Author.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Author.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Author.Location = new System.Drawing.Point(443, 307);
+            this.Author.Name = "Author";
+            this.Author.Size = new System.Drawing.Size(89, 27);
+            this.Author.TabIndex = 23;
+            this.Author.Text = "Author";
+            // 
             // AddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(244)))), ((int)(((byte)(217)))));
             this.ClientSize = new System.Drawing.Size(1067, 584);
+            this.Controls.Add(this.royalButton1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.foxBigLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -412,12 +450,12 @@
         #endregion
 
         private ReaLTaiizor.RoyalButton royalButton1;
-        private ReaLTaiizor.ComboBoxEdit comboBoxEdit3;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox5;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox4;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox3;
-        private ReaLTaiizor.ComboBoxEdit comboBoxEdit2;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox1;
+        private ReaLTaiizor.ComboBoxEdit bLocation;
+        private ReaLTaiizor.DungeonTextBox bAbooks;
+        private ReaLTaiizor.DungeonTextBox bTcopies;
+        private ReaLTaiizor.DungeonTextBox bEdition;
+        private ReaLTaiizor.ComboBoxEdit bPublisher;
+        private ReaLTaiizor.DungeonTextBox bTitle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -427,10 +465,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
-        private ReaLTaiizor.DungeonTextBox dungeonTextBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private ReaLTaiizor.ComboBoxEdit comboBoxEdit1;
+        private ReaLTaiizor.DungeonTextBox bIsbn;
+        private System.Windows.Forms.DateTimePicker bPublicationDate;
+        private ReaLTaiizor.ComboBoxEdit bCategory;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ReaLTaiizor.FoxBigLabel foxBigLabel1;
+        private ReaLTaiizor.ComboBoxEdit bAuthor;
+        private System.Windows.Forms.Label Author;
     }
 }
